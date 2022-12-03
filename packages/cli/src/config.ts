@@ -1,4 +1,6 @@
-import { globalPluginContext, CliServiceContext } from "./context";
+import { fileURLToPath } from "url";
+
+import { CliServiceContext, globalPluginContext } from "./context";
 
 export type CliServicePlugin<O = any> = (options: O) => {
   name: string;
@@ -18,6 +20,10 @@ export async function loadCliServiceConfig(cwd?: string): Promise<{
   config?: CliServiceConfig;
   sources?: string[];
 }> {
+  if (cwd) {
+    cwd = cwd.startsWith("file:///") ? fileURLToPath(cwd) : cwd;
+  }
+
   try {
     const { config, sources } = await globalPluginContext.loadConfig("charrue-cli.config", cwd);
     return {

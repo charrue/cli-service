@@ -37,7 +37,6 @@ const init = async () => {
   cli.parse();
 };
 
-init()
-  .catch((e) => {
-    console.error(e);
-  });
+init().catch((e) => {
+  console.error(e);
+});

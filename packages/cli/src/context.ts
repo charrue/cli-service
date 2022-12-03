@@ -1,5 +1,5 @@
-import consola from "consola";
 import { cac } from "cac";
+import consola from "consola";
 import { loadConfig } from "unconfig";
 
 export const globalPluginMap = new Map<string, any>();

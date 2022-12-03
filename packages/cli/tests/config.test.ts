@@ -1,12 +1,12 @@
 import { describe, expect, test } from "vitest";
-import { resolve } from "path";
+
 import { loadCliServiceConfig } from "../src/config";
 
-const featureDir = resolve(__dirname, "./features");
+const featureDir = new URL("./features", import.meta.url);
 
 describe("config", () => {
   test("load config file", async () => {
-    const { config } = await loadCliServiceConfig(featureDir);
+    const { config } = await loadCliServiceConfig(featureDir.toString());
 
     expect(config).not.toBeUndefined();
 

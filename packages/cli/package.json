@@ -2,6 +2,7 @@
   "name": "@charrue/cli-service",
   "description": "A tool to register cli commands pluggable",
   "version": "0.0.1",
+  "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -20,6 +21,8 @@
   },
   "scripts": {
     "build": "tsup",
+    "prepublishOnly": "npm run build",
+    "release": "bumpp --commit --push --tag && npm publish",
     "test": "vitest"
   },
   "dependencies": {
