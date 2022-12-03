@@ -1,0 +1,33 @@
+{
+  "name": "@charrue/cli-service",
+  "description": "A tool to register cli commands pluggable",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "bin",
+    "README.md"
+  ],
+  "keywords": [
+    "cli",
+    "cli-service",
+    "charrue"
+  ],
+  "bin": {
+    "charrue-cli-service": "bin/cli.js"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "cac": "^6.7.14",
+    "consola": "^2.15.3",
+    "unconfig": "^0.3.7"
+  },
+  "devDependencies": {
+    "@charrue/node-toolkit": "^0.3.1"
+  }
+}
